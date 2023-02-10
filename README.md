@@ -67,3 +67,28 @@ const text = "Red! Red. I like red, green, and yellow.";
 const word = "Red";
 numberOfOccurrencesInText(word, text);
 Expected Output: 3
+
+Describe: removeBannedWords()
+
+Test: "It should return array if array contains no banned words."
+Code:
+const text = "hey hey people.";
+const word = "";
+removeBannedWords(word, text);
+Expected Output: "hey hey people."
+
+Test: "It should replace banned words with "******" text contains them."
+Code:
+const text = "like zoinks man.";
+const word = "zoinks";
+removeBannedWords(word, text);
+Expected Output: ["like", "******", "man."]
+
+Test: "It should replace banned words regardless of case."
+Code:
+const text = "like ZOINKS man.";
+const word = "zoinks";
+removeBannedWords(word, text);
+Expected Output: ["like", "******", "man"]
+
+
