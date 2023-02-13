@@ -5,7 +5,7 @@ function wordCounter(text) {
   }
   let wordCount = 0;
   const textArray = text.split(" ");
-  textArray.array.forEach(function(word) {
+  textArray.forEach(function(element) {
     if (!Number(element)) {
       wordCount++;
     }
@@ -14,11 +14,14 @@ function wordCounter(text) {
 }
 
 function numberOfOccurrencesInText(word, text) {
+  if (word.trim().length === 0) {
+    return 0;
+  }
   const textArray = text.split(" ");
   let wordCount = 0;
   textArray.forEach(function(element) {
-    if (element.toLowerCase().includes(word.toLowerCase()))  {
-      wordCount++
+    if (element.toLowerCase().includes(word.toLowerCase())) {
+      wordCount++;
     }
   });
   return wordCount;
@@ -49,5 +52,5 @@ function handleFormSubmission(event) {
 }
 
 window.addEventListener("load", function() {
-  this.document.querySelector("form#word-counter").addEventListener("submit", handleFormSubmission);
+  document.querySelector("form#word-counter").addEventListener("submit", handleFormSubmission);
 });
